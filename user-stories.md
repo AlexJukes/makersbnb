@@ -33,7 +33,7 @@ I want to provide name, description and price of my property.
 ### User Story 7
 As a user,
 So I can let my property when I want,
-I want to select the dates it's available.
+I want to choose the dates that my property is available.
 
 ### User Story 8
 As a user,
