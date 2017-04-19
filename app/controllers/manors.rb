@@ -18,4 +18,9 @@ class ExitBeforeBrexit < Sinatra::Base
     erb :'/manors/index'
   end
 
+  get '/manors/:id' do
+    @manor = Manor.first(id: params[:id])
+    erb :'manors/details'
+  end
+
 end
