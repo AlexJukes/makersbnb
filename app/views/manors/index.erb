@@ -1,7 +1,5 @@
-
-
-
-<h1> Manors </h1>
+<h1>Welcome <%= current_user.name %> </h1>
+<h2> Manors </h2>
 <ul id='manors'>
   <% @manors.each do |manor| %>
   <li>
