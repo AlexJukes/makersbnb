@@ -2,6 +2,7 @@ require 'data_mapper'
 require 'dm-postgres-adapter'
 
 require_relative 'models/user'
+require_relative 'models/manor'
 # require_relative 'models/link'
 # require_relative 'models/user'
 
