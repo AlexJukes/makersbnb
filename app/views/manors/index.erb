@@ -5,12 +5,13 @@
 <h2> Manors </h2>
 <ul id='manors'>
   <% @manors.each do |manor| %>
-  <li>
+  <li><a href="/manors/<%= manor.id %>" id="<%= manor.id %>">
     Manor name: <%=manor.name%>
     Manor description: <%=manor.description%>
     Price: <%=manor.price%>
     Available from: <%=manor.date_from%>
     Available to: <%=manor.date_to%>
+  </a>
   </li>
   <%end%>
 </ul>
