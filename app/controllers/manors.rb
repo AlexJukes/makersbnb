@@ -1,9 +1,5 @@
 class ExitBeforeBrexit < Sinatra::Base
 
-  get '/manors' do
-    erb :'manors/index'
-  end
-
   get '/manors/new' do
     erb :'manors/new'
   end
