@@ -9,6 +9,12 @@ class ExitBeforeBrexit < Sinatra::Base
   end
 
   post '/manor/new' do
-    @manor = Manor.create(name: params[:name], description: params[:description], price: params[:price], date_from: params[:dateFrom], date_to: params[:dateTo])
+    Manor.create(name: params[:name], description: params[:description], price: params[:price], date_from: params[:dateFrom], date_to: params[:dateTo])
+    redirect '/manors'
+  end
+
+  get '/manors' do
+    @manors = Manor.all
+    erb :'/manors/index'
   end
 end
