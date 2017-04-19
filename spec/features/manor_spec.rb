@@ -7,6 +7,15 @@ feature 'List Manor' do
     sign_in
     expect {create_manor}.to change(Manor, :count).by(1)
   end
+
+  scenario 'I want a listed manor to be associated to my account' do
+    sign_up
+    sign_in
+    create_manor
+    # expect(page).to have_content 'Owner: Nigel Foliage'
+    # require 'pry'; binding.pry
+    expect(Manor.first(name: "Buckingham Palace").user.name).to eq 'Nigel Foliage'
+  end
 end
 
 feature 'Listed Manors' do
