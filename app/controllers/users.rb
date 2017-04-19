@@ -2,7 +2,7 @@ class ExitBeforeBrexit < Sinatra::Base
 
   get '/' do
     "Hello World"
-    erb :"users/new"
+    erb :"users/new", :_test => false
   end
 
   post '/user/new' do

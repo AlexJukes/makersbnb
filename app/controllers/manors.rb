@@ -17,4 +17,5 @@ class ExitBeforeBrexit < Sinatra::Base
     @manors = Manor.all
     erb :'/manors/index'
   end
+
 end
