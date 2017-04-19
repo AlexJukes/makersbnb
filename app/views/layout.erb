@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <body>
+      <form action='sessions/end' method='post'>
+        <input type='hidden' name='_method' value='delete' >
+        Log Out: <input type='submit' value="Log Out" >
+      </form>
+      <%= partial :flash %>
+      <%= yield %>
+    </body>
+  </head>
