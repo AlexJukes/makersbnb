@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
+
+
   <head>
     <title>ExitBeforeBrexit</title>
   </head>
-  <body>
-    <h1> ExitBeforeBrexit </h1>
-
-    <%= yield %>
-  </body>
+    <body>
+       <h1> ExitBeforeBrexit </h1>
+      <form action='sessions/end' method='post'>
+        <input type='hidden' name='_method' value='delete' >
+        Log Out: <input type='submit' value="Log Out" >
+      </form>
+      <%= partial :flash %>
+      <%= yield %>
+    </body>
 </html>

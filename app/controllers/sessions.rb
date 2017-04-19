@@ -15,4 +15,10 @@ class ExitBeforeBrexit < Sinatra::Base
     end
   end
 
+  delete '/sessions/end' do
+    flash.next[:notice] = "Goodbye"
+    session[:user_id] = nil
+    redirect '/sessions/new'
+  end
+
 end
