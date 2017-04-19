@@ -1,0 +1,15 @@
+
+
+
+<h1> Manors </h1>
+<ul id='manors'>
+  <% @manors.each do |manor| %>
+  <li>
+    Manor name: <%=manor.name%>
+    Manor description: <%=manor.description%>
+    Price: <%=manor.price%>
+    Available from: <%=manor.date_from%>
+    Available to: <%=manor.date_to%>
+  </li>
+  <%end%>
+</ul>
