@@ -2,7 +2,7 @@ class Manor
 
   include DataMapper::Resource
 
-  proprty :id, Serial
+  property :id, Serial
   property :name, String
   property :description, Text
   property :price, Float
