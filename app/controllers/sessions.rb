@@ -1,7 +1,7 @@
 class ExitBeforeBrexit < Sinatra::Base
 
   get '/sessions/new' do
-    erb :"sessions/new"
+    erb :"sessions/new", :layout => false
   end
 
   post '/sessions' do
@@ -11,7 +11,7 @@ class ExitBeforeBrexit < Sinatra::Base
       redirect '/manors'
     else
       flash.now[:errors] = ['The email or password is incorrect']
-      erb :"/sessions/new"
+      erb :"/sessions/new", :layout => false
     end
   end
 

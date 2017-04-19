@@ -1,5 +1,12 @@
+
 <form action='/sessions' method='post'>
   Email: <input type='email' name='email' required>
   Password: <input type='password' name='password' required>
   <input type='submit' value='Log in'>
 </form>
+
+<% if flash[:notice] %>
+  <div id='notice' >
+    <%= flash[:notice] %>
+  </div>
+<% end %>
