@@ -1,4 +1,7 @@
+<% if current_user %>
 <h1>Welcome <%= current_user.name %> </h1>
+<% end %>
+
 <h2> Manors </h2>
 <ul id='manors'>
   <% @manors.each do |manor| %>
