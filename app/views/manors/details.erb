@@ -8,8 +8,14 @@
       <input type="date" name="reservation_arrival_date">
   </label>
 
+  <label for="manor_id">
+      <input type="hidden" value="<%= @manor.id %>" name="manor_id">
+  </label>
+
   <label for="request_to_book">
       <input type="submit" value="Request to Book">
   </label>
+
+
 
 </form>

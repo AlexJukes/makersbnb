@@ -9,7 +9,9 @@ feature 'Request manor' do
     sign_out
 
     set_up_letter
-    expect { make_request }.to change(Request, :count).by(1)
+    make_request
+    require 'pry'; binding.pry
+    # expect { make_request }.to change(Request, :count).by(1)
   end
 
 end
