@@ -43,3 +43,14 @@ def sign_in_letter
   fill_in :password, with: "buttercup"
   click_button("Log in")
 end
+
+def set_up_owner
+  sign_up
+  sign_in
+  create_manor
+end
+
+def set_up_letter
+  sign_up_letter
+  sign_in_letter
+end
