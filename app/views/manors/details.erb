@@ -1,1 +1,19 @@
 <h1> <%= @manor.name %> </h1>
+
+<p><%= @manor.description %></p>
+
+<form action="/requests/new" method="post">
+
+  <label for="reservation_arrival_date">
+      <input type="date" name="reservation_arrival_date">
+  </label>
+
+  <label for="manor_id">
+      <input type="hidden" name="manor_id" value="<%= @manor.id %>">
+  </label>
+
+  <label for="request_to_book">
+      <input type="submit" value="Request to Book">
+  </label>
+
+</form>
