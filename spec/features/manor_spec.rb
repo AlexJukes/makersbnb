@@ -36,7 +36,6 @@ feature 'View Manor' do
     sign_up
     sign_in
     create_manor
-    require 'pry'; binding.pry
     click_link(Manor.first(name: "Buckingham Palace").id)
     expect(current_path).to eq "/manors/#{Manor.first(name: "Buckingham Palace").id}"
     expect(page).to have_content('Buckingham Palace')

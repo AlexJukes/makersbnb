@@ -22,9 +22,15 @@
         </form>
       <% end %>
 
-      <% if !current_user %>
+      <% if !current_user && @current_page != '/sessions/new'%>
         <form action='/sessions/new' >
           <input type='submit' value='Log in'>
+        </form>
+      <% end %>
+
+      <% if !current_user && @current_page != '/users/new'%>
+        <form action='/' >
+          <input type='submit' value='Sign up'>
         </form>
       <% end %>
 
