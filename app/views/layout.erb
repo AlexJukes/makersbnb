@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-
-
   <head>
     <title>ExitBeforeBrexit</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" >
   </head>
-    <body>
+    <body class='background'>
        <h1> ExitBeforeBrexit </h1>
 
        <form action='/manors' >
@@ -22,15 +21,12 @@
         </form>
       <% end %>
 
-      <% if !current_user && @current_page != '/sessions/new'%>
-        <form action='/sessions/new' >
-          <input type='submit' value='Log in'>
-        </form>
-      <% end %>
-
-      <% if !current_user && @current_page != '/users/new'%>
+      <% if !current_user %>
         <form action='/' >
           <input type='submit' value='Sign up'>
+        </form>
+        <form action='/sessions/new' >
+          <input type='submit' value='Log in'>
         </form>
       <% end %>
 

@@ -1,8 +1,7 @@
 class ExitBeforeBrexit < Sinatra::Base
 
   get '/' do
-    @current_page = '/users/new'
-    erb :"users/new"
+    erb :"users/new", :layout => false
   end
 
   post '/user/new' do
@@ -13,9 +12,8 @@ class ExitBeforeBrexit < Sinatra::Base
       session[:user_id] = @user.id
       redirect '/manors'
     else
-      @current_page = '/users/new'
       flash.now[:errors] = @user.errors.full_messages
-      erb :'users/new'
+      erb :"users/new", :layout => false
     end
   end
 

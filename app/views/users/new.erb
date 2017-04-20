@@ -1,17 +1,48 @@
-<% if !current_user %>
-  <form action="/user/new" method="post">
-    <label for="name">
-      Name: <input type="text" name="name">
-    </label>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="stylesheet.css">
+  <title>ExitBeforeBrexit</title>
+</head>
+    <body class='background'>
+       <h1> ExitBeforeBrexit </h1>
 
-    <label for="email">
-      Email: <input type="email" name="email">
-    </label>
+       <form action='/manors' >
+         <input type='submit' value='Manors' >
+       </form>
 
-    <label for="password">
-      Password: <input type="password" name="password">
-    </label>
+      <% if current_user %>
+        <form action='/sessions/end' method='post'>
+          <input type='hidden' name='_method' value='delete' >
+          <input type='submit' value="Log out" >
+        </form>
+        <form action='manors/new' >
+          <input type='submit' value='List New Manor' >
+        </form>
+      <% end %>
 
-    <input type="submit" value="Sign up">
-  </form>
-<% end %>
+      <% if !current_user %>
+        <form action='/sessions/new' >
+          <input type='submit' value='Log in'>
+        </form>
+      <% end %>
+
+
+      <% if !current_user %>
+        <form action="/user/new" method="post">
+          <label for="name">
+            Name: <input type="text" name="name">
+          </label>
+          <label for="email">
+            Email: <input type="email" name="email">
+          </label>
+          <label for="password">
+            Password: <input type="password" name="password">
+          </label>
+          <input type="submit" value="Sign up">
+        </form>
+      <% end %>
+
+      <%= partial :flash %>
+    </body>
+</html>

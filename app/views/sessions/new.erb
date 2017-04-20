@@ -1,6 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheet1.css">
+    <title>ExitBeforeBrexit</title>
+  </head>
+    <body class='background'>
+       <h1> ExitBeforeBrexit </h1>
+       <form action='/manors' >
+         <input type='submit' value='Manors' >
+       </form>
 
-<form action='/sessions' method='post'>
-  Email: <input type='email' name='email' required>
-  Password: <input type='password' name='password' required>
-  <input type='submit' value='Log in'>
-</form>
+      <% if current_user %>
+        <form action='/sessions/end' method='post'>
+          <input type='hidden' name='_method' value='delete' >
+          <input type='submit' value="Log out" >
+        </form>
+        <form action='manors/new' >
+          <input type='submit' value='List New Manor' >
+        </form>
+      <% end %>
+
+      <form action='/sessions' method='post'>
+        Email: <input type='email' name='email' required>
+        Password: <input type='password' name='password' required>
+        <input type='submit' value='Log in'>
+      </form>
+
+      <% if !current_user %>
+        <form action='/' >
+          <input type='submit' value='Sign up'>
+        </form>
+      <% end %>
+
+      <%= partial :flash %>
+    </body>
+</html>
