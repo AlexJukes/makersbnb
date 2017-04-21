@@ -1,12 +1,44 @@
+<!DOCTYPE html>
+<html>
 
-<form action='/sessions' method='post'>
-  Email: <input type='email' name='email' required>
-  Password: <input type='password' name='password' required>
-  <input type='submit' value='Log in'>
-</form>
 
-<% if flash[:notice] %>
-  <div id='notice' >
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+  <head>
+    <title>ExitBeforeBrexit</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css" >
+    <link href="https://fonts.googleapis.com/css?family=UnifrakturCook:700" rel="stylesheet">
+  </head>
+    <body>
+       <h1 id="head-title"> ExitBeforeBrexit </h1>
+
+       <form action='/manors' >
+         <input type='submit' value='Manors' >
+       </form>
+
+      <% if current_user %>
+        <form action='/sessions/end' method='post'>
+          <input type='hidden' name='_method' value='delete' >
+          <input type='submit' value="Log out" >
+        </form>
+        <form action='manors/new' >
+          <input type='submit' value='List New Manor' >
+        </form>
+        <form action='/requests' >
+          <input type='submit' value='My Requests' >
+        </form>
+      <% end %>
+
+      <form action='/sessions' method='post'>
+        Email: <input type='email' name='email' required>
+        Password: <input type='password' name='password' required>
+        <input type='submit' value='Log in'>
+      </form>
+
+      <% if flash[:notice] %>
+        <div id='notice' >
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <%= partial :flash %>
+    </body>
+</html>

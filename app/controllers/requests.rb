@@ -20,7 +20,7 @@ class ExitBeforeBrexit < Sinatra::Base
 
   get '/requests/:id' do
     @owner_request = Request.get(params[:id])
-    erb :'requests/details', :layout => false
+    erb :'requests/details'
   end
 
   post '/requests/confirm' do
