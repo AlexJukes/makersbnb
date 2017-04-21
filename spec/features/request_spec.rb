@@ -64,5 +64,21 @@ feature 'Request manor' do
     expect(page).to have_content "2017-06-08"
   end
 
+  scenario 'Owner confirms request' do
+    set_up_owner
+    sign_out # Owner signs out
+
+    set_up_letter
+    make_request
+    sign_out
+
+    sign_in # Owner signs back in
+    visit '/requests'
+    click_link "#{Request.first.id}"
+    click_button "Confirm request"
+    expect(current_path).to eq "/requests"
+    expect(page).to have_content 'Confirmed'
+  end
+
 
 end

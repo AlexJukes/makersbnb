@@ -7,5 +7,14 @@ class Request
 
   property :id, Serial
   property :date_from, Date
+  property :confirmed, Boolean, :default => false
+
+  def confirmation
+    if self.confirmed
+      "Confirmed"
+    else
+      "Not confirmed"
+    end
+  end
 
 end
