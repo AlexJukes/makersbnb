@@ -20,6 +20,8 @@ feature 'Request manor' do
     expect(current_path).to eq '/sessions/new'
     expect(page).to have_content 'You must be logged in to request a manor'
 
+  end
+
   scenario 'I want to see the requests that I have made' do
     set_up_owner
     sign_out
@@ -45,6 +47,15 @@ feature 'Request manor' do
     expect(page).to have_content('Buckingham Palace')
     expect(page).to have_content('2017-06-08')
   end
+
+  # scenario 'Prevents user from creating request if date is not listed by owner' do
+  #   set_up_owner
+  #   sign_out
+  #
+  #   set_up_letter
+  #
+  #
+  # end
 
 
 end
