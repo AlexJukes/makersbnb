@@ -1,0 +1,14 @@
+<h1> Requests </h1>
+
+<h3> Requests I've made </h3>
+
+<ul id="user_requests">
+  <% @user_requests.each do |request| %>
+  <li> <a href="/manors/<%= request.manor_id %>" id="<%= request.manor_id %>">
+    Manor name: <%=request.manor.name %>
+    Date requested: <%= request.date_from %>
+  </a>
+</li>
+<% end %>
+
+</ul>
