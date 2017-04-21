@@ -21,7 +21,7 @@ class ExitBeforeBrexit < Sinatra::Base
 
   get '/requests/:id' do
     # "Hello world"
-    @owner_request = Request.first(params[:id])
+    @owner_request = Request.get(params[:id])
     require 'pry'; binding.pry
     erb :'requests/details', :layout => false
   end
