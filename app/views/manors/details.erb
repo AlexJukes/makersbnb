@@ -5,7 +5,7 @@
 <form action="/requests/new" method="post">
 
   <label for="reservation_arrival_date">
-      <input type="date" name="reservation_arrival_date">
+      <input type="date" name="reservation_arrival_date" min=<%=@manor.date_from %> max=<%=@manor.date_to %> >
   </label>
 
   <label for="manor_id">
