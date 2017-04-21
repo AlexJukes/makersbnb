@@ -19,6 +19,7 @@ feature 'Request manor' do
     make_request
     expect(current_path).to eq '/sessions/new'
     expect(page).to have_content 'You must be logged in to request a manor'
+  end
 
   end
 

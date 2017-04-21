@@ -29,4 +29,12 @@ feature 'Layout' do
     visit '/manors'
     expect(page).to have_button('List New Manor')
   end
+
+  scenario 'Go to my requests page' do
+    sign_up
+    visit '/'
+    expect(page).to have_button('My Requests')
+    visit '/manors'
+    expect(page).to have_button('My Requests')
+  end
 end
