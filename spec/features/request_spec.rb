@@ -21,8 +21,6 @@ feature 'Request manor' do
     expect(page).to have_content 'You must be logged in to request a manor'
   end
 
-  end
-
   scenario 'I want to see the requests that I have made' do
     set_up_owner
     sign_out
