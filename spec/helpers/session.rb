@@ -15,14 +15,6 @@ def sign_in
   click_button("Log in")
 end
 
-# def sign_in
-#   visit '/sessions/new'
-#   expect(page.status_code).to eq(200)
-#   fill_in :email, with: "nigel@foliage.com"
-#   fill_in :password, with: "butterkins"
-#   click_button("Log in")
-# end
-
 def sign_out
   click_button 'Log out'
 end
