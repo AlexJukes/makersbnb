@@ -59,7 +59,6 @@ feature 'Request manor' do
     sign_in # Owner signs back in
     visit '/requests'
     click_link "#{Request.first.id}"
-    require 'pry'; binding.pry
     expect(current_path).to eq "/requests/#{Request.first.id}"
     expect(page).to have_content "Suzie Summers"
     expect(page).to have_content "suzie@summers.com"
