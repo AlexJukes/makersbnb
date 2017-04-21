@@ -14,6 +14,7 @@ class ExitBeforeBrexit < Sinatra::Base
 
   get '/requests' do
     @user_requests = current_user.requests
+    @received_requests = current_user.manors.requests
     erb :'requests/index'
 
   end

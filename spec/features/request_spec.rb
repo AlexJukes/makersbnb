@@ -25,11 +25,25 @@ feature 'Request manor' do
     sign_out
     set_up_letter
     make_request
-    
+
     expect(current_path).to eq '/requests'
     expect(page).to have_content ('Buckingham Palace')
     expect(page).to have_content ('2017-06-08')
 
+  end
+
+  scenario 'I want to see requests for my manors' do
+    set_up_owner
+    sign_out #Owner signs out
+
+    set_up_letter
+    make_request
+    sign_out  #Letter signs out
+
+    sign_in #Owner signs back in
+    visit '/requests'
+    expect(page).to have_content('Buckingham Palace')
+    expect(page).to have_content('2017-06-08')
   end
 
 
