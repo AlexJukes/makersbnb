@@ -1,0 +1,12 @@
+body {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/c/cc/Waddesdon_Manor_North_Fa%C3%A7ade%2C_UK_-_Diliff.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+h1 {
+  font-color: blue;
+}
