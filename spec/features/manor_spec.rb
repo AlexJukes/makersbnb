@@ -27,6 +27,17 @@ feature 'Listed Manors' do
     expect(page).to have_content('Buckingham Palace')
     end
   end
+
+    scenario 'I should not see manor descriptions on the manors page' do
+      sign_up
+      sign_in
+      create_manor
+      expect(page.status_code).to eq(200)
+      expect(current_path).to eq '/manors'
+      within 'ul#manors' do
+      expect(page).not_to have_content('Lovely quaint 50 bedroom home, like new but with a historial touch. Please note: Guards are not included.')
+      end
+    end
 end
 
 feature 'View Manor' do

@@ -7,7 +7,6 @@
   <% @manors.each do |manor| %>
   <li><a href="/manors/<%= manor.id %>" id="<%= manor.id %>">
     Manor name: <%=manor.name%>
-    Manor description: <%=manor.description%>
     Price: <%=manor.price%>
     Available from: <%=manor.date_from%>
     Available to: <%=manor.date_to%>
