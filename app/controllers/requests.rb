@@ -23,4 +23,11 @@ class ExitBeforeBrexit < Sinatra::Base
     erb :'requests/details', :layout => false
   end
 
+  post '/requests/confirm' do
+    @update_request = Request.get(params[:id])
+    @update_request.update(:confirmed => true)
+    redirect '/requests'
+  end
+
+
 end
