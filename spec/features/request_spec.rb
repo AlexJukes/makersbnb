@@ -11,8 +11,13 @@ feature 'Request manor' do
     expect { make_request }.to change(Request, :count).by(1)
   end
 
-  scenario '' do
-
+  scenario 'request fails if user not signed in' do
+    set_up_owner
+    sign_out
+    visit "/manors/#{Manor.first(name: "Buckingham Palace").id}"
+    make_request
+    expect(current_path).to eq '/sessions/new'
+    expect(page).to have_content 'You must be logged in to request a manor'
   end
 
 end
