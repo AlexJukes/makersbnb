@@ -48,14 +48,22 @@ feature 'Request manor' do
     expect(page).to have_content('2017-06-08')
   end
 
-  # scenario 'Prevents user from creating request if date is not listed by owner' do
-  #   set_up_owner
-  #   sign_out
-  #
-  #   set_up_letter
-  #
-  #
-  # end
+  scenario 'I want to see details about an individual request for my manor' do
+    set_up_owner
+    sign_out # Owner signs out
+
+    set_up_letter
+    make_request
+    sign_out  
+
+    sign_in # Owner signs back in
+    visit '/requests'
+    click_link "#{Request.first.id}"
+    expect(current_path).to eq "/requests/#{Request.first.id}"
+    expect(page).to have_content "Suzie Summers"
+    expect(page).to have_content "suzie@summers.com"
+    expect(page).to have_content "2017-06-08"
+  end
 
 
 end

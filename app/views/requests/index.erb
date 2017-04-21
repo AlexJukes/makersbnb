@@ -16,7 +16,7 @@
 
 <ul id="received_requests">
   <% @received_requests.each do |request| %>
-  <li> <a href="/requests/<%= request.id %>" id="<%= request.id %>">
+  <li> <a href="/requests/<%= request.id %>" id="<%= request.id %>" class="request">
     Manor name: <%= request.manor.name %>
     Date requested: <%= request.date_from %>
   </li>
