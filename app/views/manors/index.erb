@@ -1,16 +1,19 @@
+<div class="manor-list-background">
+
 <% if current_user %>
 <h1>Welcome <%= current_user.name %> </h1>
 <% end %>
 
-<h2> Manors </h2>
-<ul id='manors'>
-  <% @manors.each do |manor| %>
-  <li><a href="/manors/<%= manor.id %>" id="<%= manor.id %>">
-    Manor name: <%=manor.name%>
-    Price: <%=manor.price%>
-    Available from: <%=manor.date_from%>
-    Available to: <%=manor.date_to%>
-  </a>
-  </li>
-  <%end%>
-</ul>
+  <h2> Manors </h2>
+  <ul id='manors'>
+    <% @manors.each do |manor| %>
+    <li><a href="/manors/<%= manor.id %>" id="<%= manor.id %>">
+      Manor name: <%=manor.name%>
+      Price: <%=manor.price%>
+      Available from: <%=manor.date_from%>
+      Available to: <%=manor.date_to%>
+    </a>
+    </li>
+    <%end%>
+  </ul>
+</div>
