@@ -54,11 +54,12 @@ feature 'Request manor' do
 
     set_up_letter
     make_request
-    sign_out  
+    sign_out
 
     sign_in # Owner signs back in
     visit '/requests'
     click_link "#{Request.first.id}"
+    require 'pry'; binding.pry
     expect(current_path).to eq "/requests/#{Request.first.id}"
     expect(page).to have_content "Suzie Summers"
     expect(page).to have_content "suzie@summers.com"
